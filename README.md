@@ -102,7 +102,7 @@ TaskManager/
 
 ![alt text](task_list.png)
 ![alt text](task_form.png)
-![alt text](tash_detail.png)
+![alt text](task_detail.png)
 ![alt text](task_search.png)
 
 ---
@@ -116,4 +116,3 @@ This project is open-source and available under the MIT License.
 ## 🙋‍♂️ Author
 
 **Vansh Parekh**
-Software Developer
