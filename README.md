@@ -102,7 +102,7 @@ TaskManager/
 
 ![alt text](task_list.png)
 ![alt text](task_form.png)
-![alt text](tash_detail.png)
+![alt text](task_detail.png)
 ![alt text](task_search.png)
 
 ---
