@@ -33,7 +33,7 @@ A simple and modern web application for managing daily tasks. Users can create, 
 
 ### Database
 
-- PostgreSQL (or SQLite for development)
+- PostgreSQL
 
 ### Database Schemas
 
@@ -49,7 +49,7 @@ A simple and modern web application for managing daily tasks. Users can create, 
 
 - Django Admin
 - Git & GitHub
-- VS Code / PyCharm
+- VS Code
 
 ---
 
