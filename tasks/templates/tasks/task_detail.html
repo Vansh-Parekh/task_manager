@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ task.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #f4f7f8;
+        color: #333;
+      }
+
+      header {
+        background: #4f46e5;
+        padding: 1rem 2rem;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      .btn-group {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .btn {
+        background: #4f46e5;
+        color: white;
+        padding: 0.6rem 1rem;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .btn.delete {
+        background: #ef4444;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Task Detail</h1>
+      <a
+        href="{% url 'task_list' %}"
+        style="color: white; text-decoration: underline"
+        >Back to List</a
+      >
+    </header>
+
+    <div class="container">
+      <h2>{{ task.title }}</h2>
+      <p>{{ task.description }}</p>
+
+      <div class="btn-group">
+        <a href="{% url 'task_update' task.pk %}" class="btn">Edit</a>
+        <a href="{% url 'task_delete' task.pk %}" class="btn delete">Delete</a>
+      </div>
+    </div>
+  </body>
+</html>

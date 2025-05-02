@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #f4f7f8;
+        color: #333;
+      }
+
+      header {
+        background: #4f46e5;
+        padding: 1rem 2rem;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      .btn {
+        background: #22c55e;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .search-bar input {
+        padding: 0.5rem;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      main {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        padding: 1rem;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h3 {
+        margin-top: 0;
+      }
+
+      .no-tasks {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Task Manager</h1>
+      <div>
+        <a href="{% url 'task_create' %}" class="btn">+ New Task</a>
+      </div>
+    </header>
+
+    <section class="search-bar" style="padding: 1rem 2rem">
+      <form method="GET" action=".">
+        <input
+          type="text"
+          name="q"
+          placeholder="Search tasks..."
+          value="{{ request.GET.q }}"
+        />
+      </form>
+    </section>
+
+    <main>
+      {% for task in tasks %}
+      <div
+        class="card"
+        onclick="location.href='{% url 'task_detail' task.pk %}'"
+      >
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description|truncatechars:100 }}</p>
+      </div>
+      {% empty %}
+      <p class="no-tasks">No tasks found.</p>
+      {% endfor %}
+    </main>
+  </body>
+</html>
