@@ -65,28 +65,6 @@ A simple and modern web application for managing daily tasks. Users can create, 
 
 ---
 
-## 🧱 Project Structure
-
-```
-TaskManager/
-├── manage.py
-├── taskapp/
-│   ├── migrations/
-│   ├── static/
-│   ├── templates/
-│   │   ├── task_list.html
-│   │   ├── task_detail.html
-│   │   ├── task_form.html
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-├── TaskManager/
-│   ├── settings.py
-│   ├── urls.py
-```
-
----
-
 ## 🔮 Future Enhancements
 
 - User Authentication
